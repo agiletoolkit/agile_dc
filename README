@@ -1,0 +1,16 @@
+Install help
+
+Files that need editing
+
+== Update database.yml for production db name
+
+
+==Update environment.rb last line for attachment storage
+#Attachment.storage_location="/srv/??/attachments"
+
+==update moonshine.yml 
+#:domain: agilephilanthropy.org
+#:repository: git@github.com:agiletoolkit/agile_philanthropy.git
+
+#:application: agilephilanthropy.org
+#:deploy_to: /srv/[**Deploy Directory**]

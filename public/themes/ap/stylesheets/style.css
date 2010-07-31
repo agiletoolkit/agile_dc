@@ -1,0 +1,154 @@
+/* Page Size & Magins */
+html {
+    background-color: #023568;
+}
+
+body {
+    margin:0px;
+}
+
+#main-doc {
+    width: 1000px; 
+}
+
+#bd th, #bd td {
+    border:none;
+}
+
+/* Headers */
+#hd {
+    background-color: #425C8F;
+}
+
+#banner {
+    background-color: #023568;
+}
+
+.right {
+	float: right;
+}
+
+/** Navigation **/
+
+
+
+#menu, #menu ul,#menu-footer, #menu-footer ul { /* all lists */
+	margin: 0;
+	list-style: none;
+	line-height: 1;
+}
+
+#menu a, #menu-footer a  {
+	display: block;
+	padding: 5px 5px 7px 5px;
+	background-color: #023568;
+	color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+	text-transform:capitalize;
+	text-decoration: none;
+
+}
+#menu  a{
+	background-color: #425C8F;
+	width: 7em;
+}
+
+#menu a:hover{
+	background-color: #7790C0;
+}
+
+#menu li,#menu-footer li { /* all list items */
+	list-style: none;
+	float: left;
+}
+
+#menu li {
+	width: 8em; /* width needed or else Opera goes nuts */	
+}
+
+#menu li ul { /* second-level lists */
+	position: absolute;
+	background: #69f;
+	width: 8em;
+	z-index:100;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+#menu li:hover ul, #menu li.sfhover ul { /* lists nested under hovered list items */
+    background-color: #425C8F;
+	left: auto;
+  height: 1%;
+}
+
+#menu li.depth-1 {
+	border-right: 2px solid  #023568;
+}
+
+#menu-footer li {
+	border-right: 1px solid  #fff;
+}
+
+#menu li.last, #menu-footer li.last {
+    border-right: none;
+}
+	
+
+
+/* Body */
+#bd {
+    padding: 20px;
+    min-height: 400px;
+    background-color: #fff;
+   
+}
+
+#bd img{
+    padding: 5px
+}
+
+#search {
+    margin-bottom:10px;
+}
+
+/* Footer */
+#ft {
+    color:#fff;
+}
+
+#ft ul {
+    padding-top:0px;
+}
+
+#ft span {
+    color:#FFFFFF;
+    float:left;
+    margin-right:120px;
+}
+
+
+/* Slideshow */
+#slides {
+	height:150px;
+    position:relative;
+    display:block;
+    margin:0px;
+    padding:0px;
+}
+
+#slides li{
+    position:absolute;
+    display:block;
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+    background-color:#FFFFFF;
+}
+
+#slides li img{
+
+    overflow:hidden;
+    display:block;
+    background-color:#FFFFFF;
+}
+

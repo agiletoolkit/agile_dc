@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <title><%= page_title %></title>
+  <%= render 'shared/header' -%>
+</head>
+  <%= cms_toolbar -%>
+  <div id="main-doc" class="yui-t6">
+    <%= render 'shared/menu' -%>
+    <div id="bd">
+  	  <div id="yui-main">
+  	    <div class="yui-b">
+  	      <div role="main" class="yui-g">
+  	        <%= container :main %>
+  	      </div>
+        </div>
+  	  </div>
+  	  <div role="complementary" class="yui-b">
+  	    <%= container :search_form %>
+  	    <br/>
+  			<%= container :side_bar_1 %>
+  	  </div>
+  	</div>
+    <div id="ft" role="contentinfo">
+      <%= render 'shared/footer' %>
+    </div>
+  </div>
+</body>
+</html>

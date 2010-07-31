@@ -1,0 +1,24 @@
+:ruby: ree
+#:application: ??.org
+:user: rails
+:group: rails
+:ssl:
+:self_signed: true
+#:deploy_to: /srv/??
+#:domain: ??.org
+#:repository: git@github.com:agiletoolkit/??.git
+:shared_children:
+- system
+- log
+- pids
+- config
+:apt_gems:
+  :rails:    
+  :paperclip:
+  - imagemagick
+:passenger:
+  :max_pool_size: 3
+  :use_global_queue: true
+:mysql:
+  :innodb_buffer_pool_size: 128M
+
