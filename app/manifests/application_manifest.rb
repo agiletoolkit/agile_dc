@@ -52,7 +52,7 @@ class ApplicationManifest < Moonshine::Manifest::Rails
   configure(
         :wordpress => {
           :directory => 'wp_agiledc',
-          :domain          => 'agiletoolkit.com',
+          :domain          => 'agiledc.org',
           :auth_key        => 'Ga--au|1$-HYu@3;S7d*}~X`1dpG|C<4Q62hiu?t*cRe$3X8DswKj%~W{S(fZVA0',
           :secure_auth_key => '`ze`VMzYe|XM(3d;gziu7A=:fDAtOGULyX n+(g.|GYj~w<MZ/Es1`$TN| ttD!q',
           :logged_in_key   => 'kioPA/wUQ(l>j]&T0R^YV*JB)|Qj2(T.SMF_qNe*<RFZE{r]7Ib i|qGXgYx0fA:',
