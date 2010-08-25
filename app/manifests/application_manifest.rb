@@ -57,7 +57,7 @@ class ApplicationManifest < Moonshine::Manifest::Rails
           :secure_auth_key => '`ze`VMzYe|XM(3d;gziu7A=:fDAtOGULyX n+(g.|GYj~w<MZ/Es1`$TN| ttD!q',
           :logged_in_key   => 'kioPA/wUQ(l>j]&T0R^YV*JB)|Qj2(T.SMF_qNe*<RFZE{r]7Ib i|qGXgYx0fA:',
           :nonce_key       => 'X;-kC]646#|a0kOqgN6z~t5^uW9x?vNL2~1KwF?|Y%/PbQ#U|dW(gN)EU!WIP~$J',
-          :db => {:name => 'wp_agiledc ,:username => 'wp_agiledc' ,:password => 'wp_agiledc'}
+          :db => {:name => 'wp_agiledc' ,:username => 'wp_agiledc' ,:password => 'wp_agiledc'}
         }
       )
   # The following line includes the 'application_packages' recipe defined above
