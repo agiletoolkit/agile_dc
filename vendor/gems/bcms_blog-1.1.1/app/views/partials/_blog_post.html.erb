@@ -1,0 +1,61 @@
+<%
+  # _counter is defined only if we pass :collection to the partial
+  if defined?(blog_post_counter)
+    showing_individual_post = false
+  else
+    showing_individual_post = true
+    blog_post_counter = 0
+  end
+%>
+<div id="blog_post_<%= blog_post.id %>" class="blog_post">
+  <% if blog_post.attachment %>
+    <div class="image">
+      <%= image_tag blog_post.attachment.file_path %>
+    </div>
+  <% end %>
+
+  <h2><%= link_to h(blog_post.name), href = _blog_post_path(blog_post) %></h2>
+  
+  <div class="date"><%= blog_post.published_at.to_s(:long) %></div>
+  
+  <div class="body">
+    <% if showing_individual_post or blog_post.summary.blank? %>
+      <%= blog_post.body %>
+    <% else %>
+      <%= blog_post.summary %>
+      <p class="read_more">
+        <%= link_to 'Read More »', href %>
+      </p>
+    <% end %>
+  </div>
+  
+  <div class="meta">
+    <% unless blog_post.category_id.blank? %>
+      Posted in <%= link_to h(blog_post.category_name), _blog_path(blog_post.blog, 'posts_in_category', :category => blog_post.category_name) %>
+      <strong>|</strong>
+    <% end %>
+
+    <% if blog_post.tags.any? %>
+      Tags:
+      <span class="tags">
+        <%= blog_post.tags.map{|t| link_to(h(t.name), _blog_path(blog_post.blog, 'posts_with_tag', :tag => t.name)) }.join(", ") %>
+      </span>
+      <strong>|</strong>
+    <% end %>
+    
+    <%= link_to h(pluralize(blog_post.comments.published.count, "Comment")), "#{_blog_post_path(blog_post)}#comments" %>
+  </div>
+  
+  <br />
+
+  <% comments = blog_post.comments.published.reject(&:new_record?) %>
+  <% if showing_individual_post and comments.any? -%>
+    <h2>Comments</h2>
+    <% comments.each_with_index do |comment, i| %>
+      <div class="comment <%= 'first' if i == 0 %>">
+        <%= h comment.body %>
+        <p>&mdash;<%= comment.url.present? ? link_to(h(comment.author), comment.url) : h(comment.author) %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>

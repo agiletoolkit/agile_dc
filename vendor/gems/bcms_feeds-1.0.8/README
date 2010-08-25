@@ -1,0 +1,10 @@
+bcms_feeds
+==========
+
+This is a BrowserCMS module which fetches, caches and displays RSS/Atom feeds.
+
+For installation instructions see http://www.browsercms.org/doc/guides/html/installing_modules.html
+
+To incorporate a feed in your page, use a Feed Portlet. Specify the URL of the feed. SimpleRSS [http://simple-rss.rubyforge.org/] is used for parsing, and a parsed version of the feed will be available in the @feed variable. You can use the code section to manipulate this data as necessary, and the template to format it.
+
+Feeds are cached in the database for 30 minutes. If there is a failure fetching a remote feed, the expiry time of the cached feed will be extended by 10 minutes. When fetching remote feeds, the timeout length is 10 seconds.
