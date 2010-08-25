@@ -51,7 +51,7 @@ class ApplicationManifest < Moonshine::Manifest::Rails
   end
   configure(
         :wordpress => {
-          :domain          => 'blog.agiledc.org',
+          :domain          => 'agiledc.org',
           :auth_key        => ':mmq+&JiiLnz3|v`#B%dGy{.JN:w.Q&);.1wkrs,*nn!cWDWvabFk_zMpXpKcT f',
           :secure_auth_key => ')x+YL+p,&mFDtj1-,S9oc2Iw;;$A=>S3%Ho~3 :^~^K7(}{?U8[C|RGsi. EG?~@',
           :logged_in_key   => '~}quWs+Mn7YL[pjxhb-)P,a[VvS,Lu4bMtW1`CvG,U/`D6O=PZ.d_zD 8|NQl7h{',
