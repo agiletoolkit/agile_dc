@@ -11,6 +11,7 @@ module Wordpress
   #  recipe :wordpress
   def wordpress(hash = {})
     options = {
+      :directory => 'wordpress',
       :domain => `hostname`,
       :db => {
         :name       => 'wordpress',
@@ -34,6 +35,8 @@ TO #{options[:db][:username]}@localhost
 IDENTIFIED BY '#{options[:db][:password]}';
 FLUSH PRIVILEGES;
     GRANT
+    
+    
     exec 'wordpress_db_permissions',
       :command => "mysql -e \"#{grant}\"",
       :unless  => "mysqlshow -u#{options[:db][:username]} -p#{options[:db][:password]} #{options[:db][:name]}",
@@ -42,13 +45,14 @@ FLUSH PRIVILEGES;
     exec 'install_wordpress',
       :command  => [
         'wget http://wordpress.org/latest.tar.gz',
-        'tar xzf latest.tar.gz -C /srv'
+        'mkdir /srv/' + options[:directory],
+        'tar xzf latest.tar.gz -C /srv/' + options[:directory] + '/'
       ].join(' && '),
       :cwd     => '/tmp',
       :require => package('wget'),
-      :creates => '/srv/wordpress'
+      :creates => '/srv/' + options[:directory]
 
-    file '/srv/wordpress/wp-config.php',
+    file '/srv/' + options[:directory] + '/wordpress/wp-config.php',
       :content => template(File.join(File.dirname(__FILE__), '..', 'templates', 'wp-config.php'), binding),
       :require => exec('install_wordpress'),
       :notify  => service('apache2')

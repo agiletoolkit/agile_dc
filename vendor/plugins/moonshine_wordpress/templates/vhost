@@ -2,7 +2,7 @@
 
 ServerName <%= options[:domain] %>
 
-DocumentRoot /srv/wordpress
+DocumentRoot /srv/<%= options[:directory] %>/wordpress
 DirectoryIndex index.php
 
 <%= options[:vhost_extra] %>
@@ -10,7 +10,7 @@ DirectoryIndex index.php
 ErrorLog        /var/log/apache2/<%= options[:domain] %>-error.log
 CustomLog       /var/log/apache2/<%= options[:domain] %>-access.log combined
 
-<Directory /srv/wordpress>
+<Directory /srv/<%= options[:directory] %>/wordpress>
 AddHandler fcgid-script .php
 FCGIWrapper /usr/lib/cgi-bin/php5 .php
 Options +ExecCGI 

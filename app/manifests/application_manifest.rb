@@ -51,12 +51,13 @@ class ApplicationManifest < Moonshine::Manifest::Rails
   end
   configure(
         :wordpress => {
-          :domain          => 'agiledc.org',
-          :auth_key        => ':mmq+&JiiLnz3|v`#B%dGy{.JN:w.Q&);.1wkrs,*nn!cWDWvabFk_zMpXpKcT f',
-          :secure_auth_key => ')x+YL+p,&mFDtj1-,S9oc2Iw;;$A=>S3%Ho~3 :^~^K7(}{?U8[C|RGsi. EG?~@',
-          :logged_in_key   => '~}quWs+Mn7YL[pjxhb-)P,a[VvS,Lu4bMtW1`CvG,U/`D6O=PZ.d_zD 8|NQl7h{',
-          :nonce_key       => 'gkZ?}N{QT@XU59MvyJyS_E/W6$^^A-TFWV:rM|Hl)P|*9?AYoT<(0j_0kx!&]7a-',
-          :db => {:password => ''}
+          :directory => 'wp_agiledc',
+          :domain          => 'agiletoolkit.com',
+          :auth_key        => 'Ga--au|1$-HYu@3;S7d*}~X`1dpG|C<4Q62hiu?t*cRe$3X8DswKj%~W{S(fZVA0',
+          :secure_auth_key => '`ze`VMzYe|XM(3d;gziu7A=:fDAtOGULyX n+(g.|GYj~w<MZ/Es1`$TN| ttD!q',
+          :logged_in_key   => 'kioPA/wUQ(l>j]&T0R^YV*JB)|Qj2(T.SMF_qNe*<RFZE{r]7Ib i|qGXgYx0fA:',
+          :nonce_key       => 'X;-kC]646#|a0kOqgN6z~t5^uW9x?vNL2~1KwF?|Y%/PbQ#U|dW(gN)EU!WIP~$J',
+          :db => {:name => 'wp_agiledc ,:username => 'wp_agiledc' ,:password => 'wp_agiledc'}
         }
       )
   # The following line includes the 'application_packages' recipe defined above
